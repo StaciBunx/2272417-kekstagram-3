@@ -107,11 +107,7 @@ const createComment = () => {
   };
 };
 
-const createComments = () => {
-  const count = getRandomNumberInRange(MIN_COMMENTS, MAX_COMMENTS);
-  const comments = Array.from({ length: count }, createComment);
-  return comments;
-};
+const createComments = () => Array.from({ length: getRandomNumberInRange(MIN_COMMENTS, MAX_COMMENTS) }, createComment);
 
 const createPhoto = () => {
   const id = getPhotoId();
@@ -130,4 +126,4 @@ const createPhoto = () => {
 
 // Сборка
 const createPhotos = (count) => Array.from({ length: count }, createPhoto);
-const photos = createPhotos(OBJECT_QNT);
+createPhotos(OBJECT_QNT);
